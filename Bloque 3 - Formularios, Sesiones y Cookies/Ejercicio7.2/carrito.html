@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda - Añadir Producto</title>
+</head>
+<body>
+
+    <h2>Añadir Producto al Carrito</h2>
+    <!-- Envía la selección mediante POST al backend carrito.php -->
+    <form method="POST" action="carrito.php">
+        <label for="producto">Producto:</label>
+        <select id="producto" name="producto">
+            <option value="Portátil">Portátil - 800€</option>
+            <option value="Ratón">Ratón - 25€</option>
+            <option value="Teclado">Teclado - 45€</option>
+        </select>
+        
+        <!-- Campo oculto para enviar el precio dinámico -->
+        <input type="hidden" name="precio" id="precio_input" value="800">
+
+        <button type="submit">Añadir al carrito</button>
+    </form>
+
+    <br>
+    <a href="carrito.php">Ver mi carrito actual</a>
+
+    <script>
+        // JS para actualizar el input oculto según el producto seleccionado
+        document.getElementById('producto').addEventListener('change', function() {
+            const precios = {
+                "Portátil": 800, 
+                "Ratón": 25, 
+                "Teclado": 45
+            };
+            document.getElementById('precio_input').value = precios[this.value];
+        });
+    </script>
+
+</body>
+</html>

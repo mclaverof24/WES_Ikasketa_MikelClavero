@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador de Productos</title>
+</head>
+<body>
+
+    <h2>Filtrar Productos</h2>
+
+    <!-- Envía los filtros por GET para que los datos viajen en la URL -->
+    <form method="GET" action="resultados.php">
+        <label for="texto">Nombre del producto:</label><br>
+        <input type="text" id="texto" name="q" placeholder="Ej: Portátil"><br><br>
+
+        <label for="categoria">Categoría:</label><br>
+        <select id="categoria" name="categoria">
+            <option value="todas">Todas las categorías</option>
+            <option value="electronica">Electrónica</option>
+            <option value="ropa">Ropa</option>
+            <option value="hogar">Hogar</option>
+        </select><br><br>
+
+        <label for="precio_max">Precio Máximo (€):</label><br>
+        <input type="number" id="precio_max" name="precio_max" value="500"><br><br>
+
+        <button type="submit">Buscar</button>
+    </form>
+
+</body>
+</html>
